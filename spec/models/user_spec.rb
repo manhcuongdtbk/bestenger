@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to have_many(:channels_users).dependent(:destroy) }
+  it { is_expected.to have_many(:channels).through(:channels_users) }
 end
