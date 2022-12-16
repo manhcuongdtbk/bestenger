@@ -4,10 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 gem 'bootsnap', require: false
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'jbuilder'
 gem 'jsbundling-rails'
+gem 'kaminari'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'

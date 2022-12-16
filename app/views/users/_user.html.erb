@@ -1,0 +1,11 @@
+<tr id="<%= dom_id(user) %>">
+  <th scope="row" class="align-middle"><%= user.id %></th>
+  <td class="align-middle"><%= user.email %></td>
+  <td>
+    <% if current_user.private_channel_id_with(user) %>
+      <%= link_to "Continue conversation", channels_path(to_user_id: user.id), data: { 'turbo-method' => :post }, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Start conversation", channels_path(to_user_id: user.id), data: { 'turbo-method' => :post }, class: "btn btn-primary" %>
+    <% end %>
+  </td>
+</tr>

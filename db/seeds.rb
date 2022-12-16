@@ -1,6 +1,6 @@
 User.create(email: 'user@example.com', password: '123456')
 
-1.upto(3) do |n|
+1.upto(30) do |n|
   User.create(email: "user#{n}@example.com", password: '123456')
 end
 
