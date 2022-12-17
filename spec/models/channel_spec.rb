@@ -9,7 +9,7 @@ RSpec.describe Channel do
 
   it do
     expect(channel).to(
-      define_enum_for(:channel_type).with_values(public: 'public', group: 'group', private: 'private')
+      define_enum_for(:channel_type).with_values(public: 'public', private: 'private')
                                     .backed_by_column_of_type(:string)
                                     .with_suffix
     )

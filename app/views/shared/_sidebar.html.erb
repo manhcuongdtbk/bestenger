@@ -30,17 +30,6 @@
     </ul>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase fs-6 fw-bolder">
-      <span>Group channels</span>
-    </h6>
-    <ul class="nav flex-column mb-2">
-      <% current_user.channels.group_channel_type.each do |channel| %>
-        <li class="nav-item">
-          <%= link_to channel.name, channel, class: "nav-link fw-light" %>
-        </li>
-      <% end %>
-    </ul>
-
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase fs-6 fw-bolder">
       <span>Private channels</span>
     </h6>
     <ul class="nav flex-column mb-2">

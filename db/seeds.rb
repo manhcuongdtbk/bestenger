@@ -14,10 +14,6 @@ Channel.public_channel_type.first.users << User.all
 Channel.public_channel_type.second.users << User.first(3)
 Channel.public_channel_type.third.users << User.first(2)
 
-Channel.group_channel_type.first.users << User.first(3)
-Channel.group_channel_type.second.users << User.first(2)
-Channel.group_channel_type.third.users << User.offset(1).first(2)
-
 Channel.private_channel_type.first.users << User.first(2)
 Channel.private_channel_type.second.users << User.offset(1).first(2)
 Channel.private_channel_type.third.users << User.offset(2).first(2)
