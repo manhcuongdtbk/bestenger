@@ -11,9 +11,9 @@ RSpec.describe 'Messages' do
     end
 
     it 'returns http no_content', :aggregate_failures do
-      expect {
+      expect do
         post "/channels/#{channel.id}/messages", params: { message: { content: Faker::Lorem.sentence } }
-      }.to have_broadcasted_to(channel).from_channel(MessageChannel)
+      end.to have_broadcasted_to(channel).from_channel(MessageChannel)
       expect(response).to have_http_status(:no_content)
     end
   end

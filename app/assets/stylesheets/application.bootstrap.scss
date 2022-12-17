@@ -2,3 +2,7 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'sidebar';
 @import 'navbar';
+
+html {
+  scroll-behavior: auto !important; // Disable Bootstrap's scroll behavior to make custom scroll javascript code works
+}
