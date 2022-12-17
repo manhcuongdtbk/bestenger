@@ -5,6 +5,7 @@ export default class extends ApplicationController {
   static targets = ["messages", "newMessage"]
 
   connect() {
+    this.scrollToBottom()
     this.subscription = consumer.subscriptions.create(
       {
         channel: "MessageChannel",
@@ -22,6 +23,10 @@ export default class extends ApplicationController {
     consumer.subscriptions.remove(this.subscription)
   }
 
+  scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight)
+  }
+
   connected() {
     // Called when the subscription is ready for use on the server
   }
@@ -34,6 +39,7 @@ export default class extends ApplicationController {
     // Called when there's incoming data on the websocket for this channel
     if (data.message) {
       this.messagesTarget.insertAdjacentHTML("beforeend", data.message)
+      this.scrollToBottom()
     }
   }
 
