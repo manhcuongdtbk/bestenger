@@ -15,19 +15,19 @@
       </li>
     </ul>
 
-<!--    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase fs-6 fw-bolder">-->
-<!--      <span>Public channels</span>-->
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase fs-6 fw-bolder">
+      <span>Public channels</span>
       <%#= link_to new_channel_path do %>
-<!--              <i class="bi bi-plus-circle"></i>-->
+<!--        <i class="bi bi-plus-circle"></i>-->
       <%# end %>
-<!--    </h6>-->
-<!--    <ul class="nav flex-column mb-2">-->
-      <%# current_user.channels.public_channel_type.each do |channel| %>
-<!--        <li class="nav-item">-->
-          <%#= link_to channel.name, channel, class: "nav-link fw-light #{current_page?(channel_path(channel)) ? 'active' : ''}" %>
-<!--        </li>-->
-      <%# end %>
-<!--    </ul>-->
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <% Channel.public_channel_type.each do |channel| %>
+        <li class="nav-item">
+          <%= link_to channel.name, channel, class: "nav-link fw-light #{current_page?(channel_path(channel)) ? 'active' : ''}" %>
+        </li>
+      <% end %>
+    </ul>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase fs-6 fw-bolder">
       <span>Private channels</span>

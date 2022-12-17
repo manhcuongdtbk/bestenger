@@ -3,11 +3,11 @@
     <%= render @channel.messages %>
   </div>
 
-  <%# if @channel.public_channel_type? && current_user.channels.exclude?(@channel) %>
-    <%#= link_to "Join #{@channel.name}", channel_channels_users_path(@channel), data: { 'turbo-method' => :post } %>
-  <%# else %>
+  <% if @channel.public_channel_type? && current_user.channels.exclude?(@channel) %>
+    <%= link_to "Join #{@channel.name}", channel_channels_users_path(@channel), data: { 'turbo-method' => :post } %>
+  <% else %>
     <%= form_with model: [@channel, Message.new], data: { action: "turbo:submit-end->channel#clearMessage" }, class: "my-3" do |form| %>
       <%= form.text_field :content, class: "form-control", data: { 'channel-target': "newMessage" }, autofocus: "autofocus" %>
     <% end %>
-  <%# end %>
+  <% end %>
 </div>
