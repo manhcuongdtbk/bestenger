@@ -39,6 +39,7 @@ export default class extends ApplicationController {
     // Called when there's incoming data on the websocket for this channel
     if (data.message) {
       this.messagesTarget.insertAdjacentHTML("beforeend", data.message)
+      this.scrollToBottom()
     }
   }
 
