@@ -10,7 +10,7 @@ class ChannelsController < ApplicationController
     if created_channel_id
       @channel = Channel.find(created_channel_id)
     else
-      @channel = Channel.create(name: to_user.email, channel_type: Channel.channel_types['private'])
+      @channel = Channel.create(name: to_user.email, channel_type: Channel.channel_types[:private])
       @channel.users << [current_user, to_user]
     end
 
