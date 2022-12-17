@@ -10,7 +10,7 @@ RSpec.describe User do
     let(:another_user) { create(:user) }
 
     context 'when user has a private channel with another user' do
-      let(:channel) { create(:channel, channel_type: Channel.channel_types['private']) }
+      let(:channel) { create(:channel, channel_type: Channel.channel_types[:private]) }
 
       before do
         channel.users << [user, another_user]
