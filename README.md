@@ -1,24 +1,31 @@
-# README
+# Bestenger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Initialized with `rails new bestenger --database=postgresql --javascript=esbuild --css=bootstrap`
 
-Things you may want to cover:
+## Stack
 
-* Ruby version
+- Ruby 3.1.3
+- Rails 7.0.4
+- PostgresQL 14
+- Redis 7.0.5
+- Nodejs 18.12.1
+- Npm 8.19.2
+- Yarn 1.22.19
 
-* System dependencies
+## Development
 
-* Configuration
+Use your preferred methods below
 
-* Database creation
+### Local machine
 
-* Database initialization
+`bin/dev`
 
-* How to run the test suite
+### Docker
 
-* Services (job queues, cache servers, search engines, etc.)
+- `docker-compose up`: Start development Docker
+- `./bin/assets`: Build assets (and watch for changes)
+- `docker-compose exec web bash`: Run bash on web container
 
-* Deployment instructions
+## Production
 
-* ...
+TBD
