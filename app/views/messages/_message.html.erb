@@ -1,12 +1,4 @@
-<% if message.user == current_user %>
-  <div class="my-3 text-end">
-    <div class="badge rounded-pill text-bg-primary fs-6 fw-normal"><%= message.content %></div>
-  </div>
-<% else %>
-  <div class="my-3 text-start">
-    <% unless message.channel.private_channel_type? %>
-      <div class="fst-italic my-1"><%= message.user.email %></div>
-    <% end %>
-    <div class="badge rounded-pill text-bg-secondary fs-6 fw-normal"><%= message.content %></div>
-  </div>
-<% end %>
+<div class="my-3">
+  <div class="fst-italic my-1"><%= message.user.email %></div>
+  <div><%= message.content %></div>
+</div>
