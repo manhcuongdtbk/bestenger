@@ -24,7 +24,7 @@
     <ul class="nav flex-column mb-2">
       <% current_user.channels.public_channel_type.each do |channel| %>
         <li class="nav-item">
-          <%= link_to channel.name, channel, class: "nav-link fw-light" %>
+          <%= link_to channel.name, channel, class: "nav-link fw-light #{current_page?(channel_path(channel)) ? 'active' : ''}" %>
         </li>
       <% end %>
     </ul>
@@ -35,7 +35,7 @@
     <ul class="nav flex-column mb-2">
       <% current_user.channels.private_channel_type.each do |channel| %>
         <li class="nav-item">
-          <%= link_to channel.name, channel, class: "nav-link fw-light" %>
+          <%= link_to channel.name, channel, class: "nav-link fw-light #{current_page?(channel_path(channel)) ? 'active' : ''}" %>
         </li>
       <% end %>
     </ul>
