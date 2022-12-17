@@ -1,0 +1,13 @@
+<div class="row" data-controller="channel" data-channel-id="<%= @channel.id %>">
+  <div data-channel-target="messages">
+    <%= render @channel.messages %>
+  </div>
+
+  <%# if @channel.public_channel_type? && current_user.channels.exclude?(@channel) %>
+    <%#= link_to "Join #{@channel.name}", channel_channels_users_path(@channel), data: { 'turbo-method' => :post } %>
+  <%# else %>
+    <%= form_with model: [@channel, Message.new], data: { action: "turbo:submit-end->channel#clearMessage" } do |form| %>
+      <%= form.text_field :content, class: "form-control", data: { 'channel-target': "newMessage" } %>
+    <% end %>
+  <%# end %>
+</div>
