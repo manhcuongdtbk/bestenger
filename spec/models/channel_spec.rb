@@ -5,6 +5,7 @@ RSpec.describe Channel do
 
   it { is_expected.to have_many(:channels_users).dependent(:destroy) }
   it { is_expected.to have_many(:users).through(:channels_users) }
+  it { is_expected.to have_many(:messages).dependent(:destroy) }
 
   it do
     expect(channel).to(
