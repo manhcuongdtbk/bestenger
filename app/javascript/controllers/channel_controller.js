@@ -5,6 +5,7 @@ export default class extends ApplicationController {
   static targets = ["messages", "newMessage"]
 
   connect() {
+    this.scrollToBottom()
     this.subscription = consumer.subscriptions.create(
       {
         channel: "MessageChannel",
@@ -20,6 +21,10 @@ export default class extends ApplicationController {
 
   disconnect() {
     consumer.subscriptions.remove(this.subscription)
+  }
+
+  scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight)
   }
 
   connected() {
