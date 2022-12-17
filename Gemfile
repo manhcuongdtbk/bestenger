@@ -7,6 +7,8 @@ gem 'bootsnap', require: false
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 gem 'cssbundling-rails'
 gem 'devise'
+gem 'devise-bootstrap5'
+gem 'devise-i18n'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'kaminari'
