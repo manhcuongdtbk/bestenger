@@ -1,6 +1,13 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: %i[show]
 
+  def index
+    channel_ids = Message.active_messages.pluck(:channel_id)
+    @channels = Channel.where(id: channel_ids, channel_type: Channel.channel_types[:public])
+                       .or(Channel.where(id: current_user.channels.private_channel_type.ids))
+                       .page(params[:page])
+  end
+
   def show; end
 
   def create

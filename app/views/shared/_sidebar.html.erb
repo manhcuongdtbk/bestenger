@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <%= link_to root_path, class: "nav-link fw-normal #{current_page?(root_path) ? 'active' : ''}" do %>
+        <%= link_to channels_path, class: "nav-link fw-normal #{current_page?(channels_path) ? 'active' : ''}" do %>
           <i class="bi bi-chat-left-text"></i>
           Active conversations
         <% end %>
