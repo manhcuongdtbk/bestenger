@@ -8,7 +8,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to "#", class: "nav-link fw-normal" do %>
+        <%= link_to users_path, class: "nav-link fw-normal #{current_page?(users_path) ? 'active' : ''}" do %>
           <i class="bi bi-people"></i>
           Users
         <% end %>
