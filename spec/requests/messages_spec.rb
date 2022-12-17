@@ -2,9 +2,19 @@ require 'rails_helper'
 
 RSpec.describe 'Messages' do
   describe 'POST /create' do
-    it 'returns http created' do
-      post '/messages'
-      expect(response).to have_http_status(:created)
+    let(:channel) { create(:channel) }
+    let(:user) { create(:user) }
+
+    before do
+      sign_in(user)
+      user.channels << channel
+    end
+
+    it 'returns http no_content', :aggregate_failures do
+      expect {
+        post "/channels/#{channel.id}/messages", params: { message: { content: Faker::Lorem.sentence } }
+      }.to have_broadcasted_to(channel).from_channel(MessageChannel)
+      expect(response).to have_http_status(:no_content)
     end
   end
 end
