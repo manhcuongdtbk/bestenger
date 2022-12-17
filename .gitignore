@@ -37,3 +37,6 @@
 
 # Ignore code editor and IDE configs
 .idea
+
+# Ignore test coverage report
+coverage
